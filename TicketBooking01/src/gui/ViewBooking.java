@@ -30,7 +30,7 @@ public class ViewBooking extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
         lblHeading1 = new javax.swing.JLabel();
-        btnBook = new javax.swing.JButton();
+        btnMain = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
@@ -55,7 +55,7 @@ public class ViewBooking extends javax.swing.JFrame {
         lblHeading1.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         lblHeading1.setText("Railway Ticket Booking ");
 
-        btnBook.setText("Book Ticket");
+        btnMain.setText("Main");
 
         btnView.setText("View Bookings");
 
@@ -108,7 +108,7 @@ public class ViewBooking extends javax.swing.JFrame {
                     .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblHeading1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnMain, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(btnProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -136,7 +136,7 @@ public class ViewBooking extends javax.swing.JFrame {
                 .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBook)
+                    .addComponent(btnMain)
                     .addComponent(btnView)
                     .addComponent(btnCancel))
                 .addGap(18, 18, 18)
@@ -193,10 +193,10 @@ public class ViewBooking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify                     
-    private javax.swing.JButton btnBook;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnMain;
     private javax.swing.JButton btnProfile;
     private javax.swing.JButton btnView;
     private javax.swing.JScrollPane jScrollPane1;

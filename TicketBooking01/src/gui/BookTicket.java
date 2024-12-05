@@ -32,7 +32,7 @@ public class BookTicket extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
         btnProfile = new javax.swing.JButton();
         lblHeading1 = new javax.swing.JLabel();
-        btnBook = new javax.swing.JButton();
+        btnMain = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
@@ -67,16 +67,26 @@ public class BookTicket extends javax.swing.JFrame {
         lblHeading1.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         lblHeading1.setText("Railway Ticket Booking ");
 
-        btnBook.setText("Book Ticket");
-        btnBook.addActionListener(new java.awt.event.ActionListener() {
+        btnMain.setText("Main");
+        btnMain.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBookActionPerformed(evt);
+                btnMainActionPerformed(evt);
             }
         });
 
         btnView.setText("View Bookings");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         btnCancel.setText("Cancel Tickets");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         btnExit.setText("Exit");
 
@@ -112,7 +122,7 @@ public class BookTicket extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(btnMain, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(btnProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -155,7 +165,7 @@ public class BookTicket extends javax.swing.JFrame {
                 .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnBook)
+                    .addComponent(btnMain)
                     .addComponent(btnView)
                     .addComponent(btnCancel))
                 .addGap(18, 18, 18)
@@ -198,9 +208,23 @@ public class BookTicket extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnProfileActionPerformed
 
-    private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
+    private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnBookActionPerformed
+        new MainFrame().setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_btnMainActionPerformed
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
+        // TODO add your handling code here:
+        new ViewBooking().setVisible(true);
+        this.hide();
+    }//GEN-LAST:event_btnViewActionPerformed
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
+        // TODO add your handling code here:
+        new CanclelBooking().setVisible(true);
+        
+    }//GEN-LAST:event_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,10 +262,10 @@ public class BookTicket extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBook;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnMain;
     private javax.swing.JButton btnProfile;
     private javax.swing.JButton btnView;
     private javax.swing.JComboBox<String> cmbTicketType;
