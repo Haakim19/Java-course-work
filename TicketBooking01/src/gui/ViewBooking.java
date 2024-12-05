@@ -44,6 +44,11 @@ public class ViewBooking extends javax.swing.JFrame {
         txtSearch.setText("Search Bookings");
 
         btnLogout.setText("Logout");
+        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutActionPerformed(evt);
+            }
+        });
 
         btnProfile.setText("Profile");
         btnProfile.addActionListener(new java.awt.event.ActionListener() {
@@ -56,12 +61,32 @@ public class ViewBooking extends javax.swing.JFrame {
         lblHeading1.setText("Railway Ticket Booking ");
 
         btnMain.setText("Main");
+        btnMain.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnMainActionPerformed(evt);
+            }
+        });
 
         btnView.setText("View Bookings");
+        btnView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnViewActionPerformed(evt);
+            }
+        });
 
         btnCancel.setText("Cancel Tickets");
+        btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelActionPerformed(evt);
+            }
+        });
 
         btnExit.setText("Exit");
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
 
         lblHeading.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         lblHeading.setText("Bookings");
@@ -156,6 +181,36 @@ public class ViewBooking extends javax.swing.JFrame {
     private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {                                           
         // TODO add your handling code here:
     }                                          
+
+    private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        new MainFrame().setVisible(true);
+        this.hide();
+    }                                       
+
+    private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+        new ViewBooking().setVisible(true);
+        this.hide();
+    }                                       
+
+    private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        new CancelBooking().setVisible(true);
+        this.hide();
+    }                                         
+
+    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        new LoginFrame().setVisible(true);
+        this.hide();
+    }                                         
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {                                        
+        // TODO add your handling code here:
+                System.exit(0);
+
+    }                                       
 
     /**
      * @param args the command line arguments
