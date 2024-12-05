@@ -1,0 +1,3 @@
+class DomesticShipment extends shipment{
+    
+}
