@@ -45,7 +45,7 @@
                           <Group type="102" attributes="0">
                               <Component id="lblUserName" min="-2" pref="101" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jTextField1" min="-2" pref="182" max="-2" attributes="0"/>
+                              <Component id="txtUserName" min="-2" pref="182" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -70,7 +70,7 @@
               <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblUserName" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtUserName" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -82,7 +82,7 @@
                   <Component id="btnLogin" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btnReset" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="151" max="32767" attributes="0"/>
+              <EmptySpace pref="143" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -96,7 +96,7 @@
         <Property name="text" type="java.lang.String" value="User Name"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="txtUserName">
     </Component>
     <Component class="javax.swing.JTextField" name="txtPasswoed">
       <Events>
@@ -123,6 +123,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Reset"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnResetActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblHeading1">
       <Properties>
@@ -135,7 +138,7 @@
     <Component class="javax.swing.JLabel" name="lbllogin">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="DialogInput" size="18" style="1"/>
+          <Font name="DialogInput" size="24" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Login"/>
       </Properties>

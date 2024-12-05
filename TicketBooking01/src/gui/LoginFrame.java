@@ -27,7 +27,7 @@ public class LoginFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         lblUserName = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        txtUserName = new javax.swing.JTextField();
         txtPasswoed = new javax.swing.JTextField();
         lblPassword = new javax.swing.JLabel();
         btnLogin = new javax.swing.JButton();
@@ -57,11 +57,16 @@ public class LoginFrame extends javax.swing.JFrame {
         });
 
         btnReset.setText("Reset");
+        btnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnResetActionPerformed(evt);
+            }
+        });
 
         lblHeading1.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         lblHeading1.setText("Railway Ticket Booking ");
 
-        lbllogin.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
+        lbllogin.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         lbllogin.setText("Login");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -87,7 +92,7 @@ public class LoginFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(lblUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(64, 64, 64)
                         .addComponent(btnLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -105,7 +110,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUserName)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblPassword)
@@ -114,7 +119,7 @@ public class LoginFrame extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogin)
                     .addComponent(btnReset))
-                .addContainerGap(151, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         pack();
@@ -125,8 +130,21 @@ public class LoginFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_txtPasswoedActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
+        if (txtUserName.getText().equals("admin")&& 
+                txtPasswoed.getText().equals("123")){
+            new MainFrame().setVisible(true);
+            this.hide();
+    }
+        else{
+             txtPasswoed.setText("");  
+             txtUserName.setText("");
+        }
+// TODO add your handling code here:
     }//GEN-LAST:event_btnLoginActionPerformed
+
+    private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,11 +185,11 @@ public class LoginFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnReset;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblHeading1;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUserName;
     private javax.swing.JLabel lbllogin;
     private javax.swing.JTextField txtPasswoed;
+    private javax.swing.JTextField txtUserName;
     // End of variables declaration//GEN-END:variables
 }
