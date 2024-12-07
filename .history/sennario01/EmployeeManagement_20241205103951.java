@@ -55,7 +55,7 @@ public class EmployeeManagement {
             id = input.nextInt();
             input.nextLine(); // Consume the leftover newline
 
-            Sys.ltem.out.println("Department: ");
+            System.out.println("Department: ");
             department = input.nextLine();
 
             System.out.println("Salary: ");

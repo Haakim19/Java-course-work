@@ -4,6 +4,8 @@
  */
 package gui;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author haaki
@@ -15,8 +17,43 @@ public class BookTicket extends javax.swing.JFrame {
      */
     public BookTicket() {
         initComponents();
+        String[] ticketTypes = {"","First Class", "Second Class", "Third Class"};
+        cmbTicketType.setModel(new javax.swing.DefaultComboBoxModel<>(ticketTypes));
+        
+        cmbTicketType.addActionListener(new java.awt.event.ActionListener(){
+            public void actionPerformed(java.awt.event.ActionEvent evt){
+                updateDestinationComboBox();
+            }
+        });
     }
-
+    private void updateDestinationComboBox(){
+        cmbDestination.removeAllItems();
+        String selectedTicketType = (String) cmbTicketType.getSelectedItem();
+        
+        if ("First Class".equals(selectedTicketType)){
+            cmbDestination.addItem("Kandy - 1000 LKR");
+            cmbDestination.addItem("Colombo - 1000 LKR");
+            cmbDestination.addItem("Jaffna - 1500 LKR");
+            cmbDestination.addItem("Badulla - 800 LKR");
+            cmbDestination.addItem("Haputale - 700 LKR");
+        }else if ("Second Class".equals(selectedTicketType)){
+            cmbDestination.addItem("Kandy - 800 LKR");
+            cmbDestination.addItem("Colombo - 800 LKR");
+            cmbDestination.addItem("Jaffna - 1000 LKR");
+            cmbDestination.addItem("Badulla - 600 LKR");
+            cmbDestination.addItem("Haputale - 500 LKR");
+        }
+        else if ("Third Class".equals(selectedTicketType)){
+            cmbDestination.addItem("Kandy - 600 LKR");
+            cmbDestination.addItem("Colombo - 600 LKR");
+            cmbDestination.addItem("Jaffna - 800 LKR");
+            cmbDestination.addItem("Badulla - 400 LKR");
+            cmbDestination.addItem("Haputale - 300 LKR");
+        }
+        else {
+            cmbDestination.addItem("Selected Desstination");
+        }
+    }
 
 
     /**
@@ -28,9 +65,7 @@ public class BookTicket extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtSearch = new javax.swing.JTextField();
-        btnLogout = new javax.swing.JButton();
-        btnProfile = new javax.swing.JButton();
+        btnBook = new javax.swing.JButton();
         lblHeading1 = new javax.swing.JLabel();
         btnMain = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
@@ -45,27 +80,17 @@ public class BookTicket extends javax.swing.JFrame {
         lblTicketType = new javax.swing.JLabel();
         lblNoFoTicket = new javax.swing.JLabel();
         lblDate = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cmbDestination = new javax.swing.JComboBox<>();
         lblBook = new javax.swing.JLabel();
         lblDestination = new javax.swing.JLabel();
         cmbTicketType = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        txtSearch.setFont(new java.awt.Font("Dialog", 1, 11)); // NOI18N
-        txtSearch.setText("Search Bookings");
-
-        btnLogout.setText("Logout");
-        btnLogout.addActionListener(new java.awt.event.ActionListener() {
+        btnBook.setText("Book");
+        btnBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogoutActionPerformed(evt);
-            }
-        });
-
-        btnProfile.setText("Profile");
-        btnProfile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProfileActionPerformed(evt);
+                btnBookActionPerformed(evt);
             }
         });
 
@@ -110,14 +135,10 @@ public class BookTicket extends javax.swing.JFrame {
 
         lblDate.setText("Date");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Kandy", "Colombo", "Jaffna", "Badulla", "Trincomale", "Haputale", "Kadugannawa", " " }));
-
         lblBook.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         lblBook.setText("Book Tickets");
 
         lblDestination.setText("Destination");
-
-        cmbTicketType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Class 1", "Class 2", "Class 3" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -129,40 +150,36 @@ public class BookTicket extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(lblHeading1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                 .addGroup(layout.createSequentialGroup()
-                                    .addGap(44, 44, 44)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(lblUserName)
-                                        .addComponent(lblContectNo)
-                                        .addComponent(lblNoFoTicket)
-                                        .addComponent(lblTicketType)
-                                        .addComponent(lblDestination))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(txtDate)
-                                        .addComponent(txtNoFoTicket, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(txtContectNo, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtUesrname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(cmbTicketType, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addComponent(btnMain, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(btnProfile, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(btnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(btnCancel))))))
+                                    .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                    .addComponent(btnMain, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnView)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(btnCancel)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(118, 118, 118)
-                        .addComponent(lblBook)))
+                        .addComponent(lblBook))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblDate, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblUserName)
+                            .addComponent(lblContectNo)
+                            .addComponent(lblNoFoTicket)
+                            .addComponent(lblTicketType)
+                            .addComponent(lblDestination))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txtDate)
+                            .addComponent(txtNoFoTicket, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cmbDestination, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtContectNo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtUesrname, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cmbTicketType, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -172,16 +189,12 @@ public class BookTicket extends javax.swing.JFrame {
                 .addComponent(lblHeading1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblBook)
-                .addGap(18, 18, 18)
-                .addComponent(txtSearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnMain)
                     .addComponent(btnView)
                     .addComponent(btnCancel))
-                .addGap(18, 18, 18)
-                .addComponent(btnProfile)
-                .addGap(18, 18, 18)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUserName)
                     .addComponent(txtUesrname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -204,20 +217,16 @@ public class BookTicket extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDestination)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                    .addComponent(cmbDestination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnExit)
-                    .addComponent(btnLogout))
+                    .addComponent(btnBook))
                 .addGap(20, 20, 20))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfileActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnProfileActionPerformed
 
     private void btnMainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMainActionPerformed
         // TODO add your handling code here:
@@ -227,7 +236,7 @@ public class BookTicket extends javax.swing.JFrame {
 
     private void btnViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewActionPerformed
         // TODO add your handling code here:
-        new ViewBooking().setVisible(true);
+        new ViewBookings().setVisible(true);
         this.hide();
     }//GEN-LAST:event_btnViewActionPerformed
 
@@ -238,11 +247,23 @@ public class BookTicket extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnCancelActionPerformed
 
-    private void btnLogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutActionPerformed
+    private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
         // TODO add your handling code here:
-        new LoginFrame().setVisible(true);
-        this.hide();
-    }//GEN-LAST:event_btnLogoutActionPerformed
+        int NoofTickets = Integer.parseInt(txtNoFoTicket.getText());
+        // Extract the selected destination and get only the name (e.g., "Kandy")
+    String selectedDestination = (String) cmbDestination.getSelectedItem();
+    String destinationName = selectedDestination.split(" - ")[0]; // Get the name before " - "
+        Object[] bookingData = {
+            txtUesrname.getText(),
+            txtContectNo.getText(),
+            cmbTicketType.getSelectedItem(),
+            NoofTickets,
+            txtDate.getText(),
+            destinationName
+        };
+        BookingDataStoring.addBooking(bookingData);
+        JOptionPane.showMessageDialog(this, "Booking Successful!");
+    }//GEN-LAST:event_btnBookActionPerformed
 
     private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
         // TODO add your handling code here:
@@ -286,14 +307,13 @@ public class BookTicket extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBook;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnExit;
-    private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnMain;
-    private javax.swing.JButton btnProfile;
     private javax.swing.JButton btnView;
+    private javax.swing.JComboBox<String> cmbDestination;
     private javax.swing.JComboBox<String> cmbTicketType;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel lblBook;
     private javax.swing.JLabel lblContectNo;
     private javax.swing.JLabel lblDate;
@@ -305,7 +325,6 @@ public class BookTicket extends javax.swing.JFrame {
     private javax.swing.JTextField txtContectNo;
     private javax.swing.JTextField txtDate;
     private javax.swing.JTextField txtNoFoTicket;
-    private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtUesrname;
     // End of variables declaration//GEN-END:variables
 }
