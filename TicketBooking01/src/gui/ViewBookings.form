@@ -27,7 +27,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="lblHeading1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="btnBook" min="-2" pref="107" max="-2" attributes="0"/>
@@ -36,11 +36,7 @@
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="btnCancel" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="btnExit" min="-2" pref="73" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btncancel" min="-2" pref="73" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="btnExit" alignment="0" min="-2" pref="73" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
@@ -92,10 +88,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="lblTotal" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="46" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="btnExit" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btncancel" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
+              <Component id="btnExit" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -109,14 +102,6 @@
         </Property>
         <Property name="text" type="java.lang.String" value="View Booking"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="btncancel">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Cancel"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncancelActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="lblHeading1">
       <Properties>

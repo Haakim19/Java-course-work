@@ -92,7 +92,6 @@ private static final Map<String, Map <String, Double>> ticketPrices = new HashMa
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        btncancel = new javax.swing.JButton();
         lblHeading1 = new javax.swing.JLabel();
         btnBook = new javax.swing.JButton();
         btnView = new javax.swing.JButton();
@@ -110,13 +109,6 @@ private static final Map<String, Map <String, Double>> ticketPrices = new HashMa
 
         jLabel1.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         jLabel1.setText("View Booking");
-
-        btncancel.setText("Cancel");
-        btncancel.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncancelActionPerformed(evt);
-            }
-        });
 
         lblHeading1.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         lblHeading1.setText("Railway Ticket Booking ");
@@ -171,7 +163,7 @@ private static final Map<String, Map <String, Double>> ticketPrices = new HashMa
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblHeading1)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnBook, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -179,10 +171,7 @@ private static final Map<String, Map <String, Double>> ticketPrices = new HashMa
                                 .addComponent(btnView)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(btnCancel))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btncancel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(107, 107, 107)
                         .addComponent(jLabel1))
@@ -225,19 +214,12 @@ private static final Map<String, Map <String, Double>> ticketPrices = new HashMa
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lblTotal)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnExit)
-                    .addComponent(btncancel))
+                .addComponent(btnExit)
                 .addGap(27, 27, 27))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncancelActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_btncancelActionPerformed
 
     private void btnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBookActionPerformed
         // TODO add your handling code here:
@@ -302,7 +284,6 @@ private static final Map<String, Map <String, Double>> ticketPrices = new HashMa
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnView;
-    private javax.swing.JButton btncancel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblContectNo;
     private javax.swing.JLabel lblDate;
